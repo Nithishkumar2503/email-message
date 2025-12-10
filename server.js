@@ -8,6 +8,9 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+  res.send('Get Call Initiated...')
+})
 function handleMailOptionData(params) {
   const { name, email, message, phone, subject } = params;
 
@@ -171,3 +174,8 @@ ${message}`,
 app.listen(PORT, () => {
   console.log("Server is running in :", PORT);
 });
+
+
+app.get("/", (req, res) => res.send("Hello"));
+
+module.exports =app
